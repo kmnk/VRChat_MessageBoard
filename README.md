@@ -1,5 +1,5 @@
 # MessageBoard
-Simple system for input and share text in VRChat
+Simple system for input and share text in VRChat World
 
 ## Contents
 - README.md : this file
