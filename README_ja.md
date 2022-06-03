@@ -31,4 +31,4 @@ MIT License
 Copyright (c) 2022 KMNK
 
 ## 更新履歴
-- v1.0.0 公開
+- 2022/06/04 v1.0.0 公開
