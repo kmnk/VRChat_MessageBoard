@@ -18,9 +18,9 @@ namespace Kmnk {
 
         public void Initialize()
         {
-			this._messageText.text = string.Empty;
-			this._nameText.text = string.Empty;
-			this._timeText.text = string.Empty;
+            this._messageText.text = string.Empty;
+            this._nameText.text = string.Empty;
+            this._timeText.text = string.Empty;
         }
 
         public bool HasInitialized()
