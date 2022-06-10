@@ -13,8 +13,12 @@ VRChat のワールドに設置して、キーボードで入力したテキス�
     * MessageBoard
         * Prefabs
             - MessageBoard.prefab : そのままシーンに設置すれば使える Prefab
-            - MessageBoardCanvas.prefab : uGUI Canvas を持ったオブジェクトの Prefab （分かる人だけ使ってください）
         * Scripts
+            * Editor
+                - UdonBehaviourExtensions.cs
+                - UdonSharpBehaviourExtensions.cs
+            - MessageBoard.cs
+        * Udon
             - LogLine.cs
             - MessageBoard.cs
 
@@ -24,7 +28,7 @@ VRChat のワールドに設置して、キーボードで入力したテキス�
 3. Kmnk/MessageBoard/Prefabs 下の MessageBoard Prefab をシーンに配置
 
 ## 機能
-基本的に MessageBoardCanvas オブジェクトを選択して Inspector の MessageBoard Udon Behaviour にある項目で設定します
+基本的に MessageBoard オブジェクトを選択して Inspector の Message Board にある項目で設定します
 
 ### Only World Owner Mode
 ワールドオーナーのみ書き込みができるモードです。ワールドオーナー以外には入力ボタンが表示されません。
@@ -43,6 +47,7 @@ MIT License
 Copyright (c) 2022 KMNK
 
 ## 更新履歴
+- 2022/06/10 v1.1.1 Editor 拡張を入れて UI を整理しました
 - 2022/06/04 v1.1.0 機能を追加しました
     - initial messages : 初期メッセージ機能
     - only world owner mode : ワールドオーナーしか書き込めないようにするモード

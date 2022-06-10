@@ -13,8 +13,12 @@ Simple system for input and share text in VRChat World
     * MessageBoard
         * Prefabs
             - MessageBoard.prefab
-            - MessageBoardCanvas.prefab
         * Scripts
+            * Editor
+                - UdonBehaviourExtensions.cs
+                - UdonSharpBehaviourExtensions.cs
+            - MessageBoard.cs
+        * Udon
             - LogLine.cs
             - MessageBoard.cs
 
@@ -24,7 +28,7 @@ Simple system for input and share text in VRChat World
 3. Place MessageBoard Prefab in scene
 
 ## Features
-Basically, select the MessageBoardCanvas object and set the settings in the MessageBoard Udon Behaviour on the Inspector
+Basically, select the MessageBoardCanvas object and set the settings in the Message Board on the Inspector
 
 ### Only World Owner Mode
 Only world owner can input message. The input button will not be displayed to not world owner users.
@@ -43,6 +47,7 @@ MIT License
 Copyright (c) 2022 KMNK
 
 ## 更新履歴
+- 2022/06/10 v1.1.1 Order UI
 - 2022/06/04 v1.1.0 Add new features
     - initial messages
     - only world owner mode

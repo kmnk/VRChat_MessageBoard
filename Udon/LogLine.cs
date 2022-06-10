@@ -4,7 +4,8 @@ using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.Udon;
 
-namespace Kmnk {
+namespace Kmnk.MessageBoard.Udon
+{
     public class LogLine : UdonSharpBehaviour
     {
         [SerializeField]
