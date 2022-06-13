@@ -4,6 +4,7 @@ namespace Kmnk.MessageBoard
 {
     public class MessageBoard : MonoBehaviour
     {
+#pragma warning disable CS0414
         [SerializeField]
         [Tooltip("複数の MessageBoard を設置する際に指定します")]
         int _id = 0;
@@ -31,5 +32,11 @@ namespace Kmnk.MessageBoard
         [SerializeField]
         [Tooltip("ワールド作成時に最初から入れておくメッセージの時間部分を指定します")]
         string _initialTime = "--:--:--";
+#pragma warning restore CS0414
+
+        public int GetId()
+        {
+            return _id;
+        }
     }
 }

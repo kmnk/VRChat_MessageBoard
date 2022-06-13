@@ -7,43 +7,41 @@ using VRC.SDKBase;
 
 namespace Kmnk.MessageBoard.Udon
 {
+    [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
     public class MessageBoard : UdonSharpBehaviour
     {
         [SerializeField]
-        private int _id = 0;
+        bool _onlyWorldOwnerMode = false;
 
         [SerializeField]
-        private bool _onlyWorldOwnerMode = false;
+        string _title = "";
 
         [SerializeField]
-        private string _title = "";
+        string _timeFormat = "HH:mm:ss";
 
         [SerializeField]
-        private string _timeFormat = "HH:mm:ss";
+        string[] _initialMessages = null;
 
         [SerializeField]
-        private string[] _initialMessages = null;
+        string _initialName = "";
 
         [SerializeField]
-        private string _initialName = "";
+        string _initialTime = "--:--:--";
 
         [SerializeField]
-        private string _initialTime = "--:--:--";
+        Text _titleText = null;
 
         [SerializeField]
-        private Text _titleText = null;
+        GameObject _logLinesParent = null;
 
         [SerializeField]
-        private GameObject _logLinesParent = null;
+        Button _activateButton = null;
 
         [SerializeField]
-        private Button _activateButton = null;
+        GameObject _inputParent = null;
 
         [SerializeField]
-        private GameObject _inputParent = null;
-
-        [SerializeField]
-        private InputField _inputField = null;
+        InputField _inputField = null;
 
         [UdonSynced]
         private string[] _times = null;
@@ -80,9 +78,9 @@ namespace Kmnk.MessageBoard.Udon
             DisplayAllLogLines();
         }
 
-        public int GetId()
+        public bool IsOnlyWorldOwnerMode()
         {
-            return _id;
+            return this._onlyWorldOwnerMode;
         }
 
         public void RegisterMessage()
@@ -197,6 +195,14 @@ namespace Kmnk.MessageBoard.Udon
             }
         }
 
+        private string FormatDateTime(DateTime dateTime)
+        {
+            return dateTime
+                .ToLocalTime()
+                .ToString(_timeFormat, CultureInfo.InvariantCulture);
+        }
+
+        #region base
         private bool AmIOwner()
         {
             return Networking.IsOwner(gameObject);
@@ -206,12 +212,6 @@ namespace Kmnk.MessageBoard.Udon
         {
             Networking.SetOwner(Networking.LocalPlayer, gameObject);
         }
-
-        private string FormatDateTime(DateTime dateTime)
-        {
-            return dateTime
-                .ToLocalTime()
-                .ToString(_timeFormat, CultureInfo.InvariantCulture);
-        }
+        #endregion
     }
 }

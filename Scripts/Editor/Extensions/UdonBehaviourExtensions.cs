@@ -5,9 +5,9 @@ using VRC.Udon.Common.Interfaces;
 
 namespace Kmnk.MessageBoard
 {
-    public static class UdonBehaviourExtensions
+    internal static class UdonBehaviourExtensions
     {
-        public static T GetPublicVariable<T>(this UdonBehaviour self, string symbolName)
+        internal static T GetPublicVariable<T>(this UdonBehaviour self, string symbolName)
         {
             if (!self.publicVariables.TryGetVariableValue(symbolName, out var variableValue))
             {
@@ -16,7 +16,7 @@ namespace Kmnk.MessageBoard
             return (T)variableValue;
         }
 
-        public static void SetPublicVariable<T>(this UdonBehaviour self, string symbolName, T value)
+        internal static void SetPublicVariable<T>(this UdonBehaviour self, string symbolName, T value)
         {
             IUdonVariable CreateUdonVariable(string s, object v)
             {

@@ -1,21 +1,19 @@
 ﻿using UdonSharp;
 using UnityEngine;
 using UnityEngine.UI;
-using VRC.SDKBase;
-using VRC.Udon;
 
 namespace Kmnk.MessageBoard.Udon
 {
     public class LogLine : UdonSharpBehaviour
     {
         [SerializeField]
-        private Text _messageText = null;
+        Text _messageText = null;
 
         [SerializeField]
-        private Text _nameText = null;
+        Text _nameText = null;
 
         [SerializeField]
-        private Text _timeText = null;
+        Text _timeText = null;
 
         public void Initialize()
         {
