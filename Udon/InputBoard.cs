@@ -33,7 +33,9 @@ namespace Kmnk.MessageBoard.Udon
         {
             if (_messageBoard.IsOnlyWorldOwnerMode() && !AmIOwner())
             {
-                DestroyImmediate(this);
+                // parent : Pickup
+                // parent.parent : InputBoard root
+                DestroyImmediate(transform.parent.parent.gameObject);
             }
         }
 
