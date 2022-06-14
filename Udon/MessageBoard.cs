@@ -35,6 +35,9 @@ namespace Kmnk.MessageBoard.Udon
         GameObject _logLinesParent = null;
 
         [SerializeField]
+        GameObject _inputLine = null;
+
+        [SerializeField]
         Button _activateButton = null;
 
         [SerializeField]
@@ -60,7 +63,11 @@ namespace Kmnk.MessageBoard.Udon
 
             _logLines = _logLinesParent.GetComponentsInChildren<LogLine>();
             InitializeLogLines();
-            InitializeActivateButton();
+
+            if (!AmIOwner() && _onlyWorldOwnerMode)
+            {
+                _inputLine.gameObject.SetActive(false);
+            }
 
             if (AmIOwner())
             {
@@ -107,16 +114,6 @@ namespace Kmnk.MessageBoard.Udon
             foreach (var l in _logLines)
             {
                 l.Initialize();
-            }
-        }
-
-        private void InitializeActivateButton()
-        {
-            if (!_onlyWorldOwnerMode) { return; }
-            if (!AmIOwner())
-            {
-                // if not owner on initialize, you are not world owner
-                _activateButton.gameObject.SetActive(false);
             }
         }
 

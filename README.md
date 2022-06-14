@@ -81,6 +81,7 @@ MIT License
 Copyright (c) 2022 KMNK
 
 ## Updates
+- 2022/06/14 v1.2.2 Adjust design and layout
 - 2022/06/14 v1.2.1 Fix bugs
 - 2022/06/13 v1.2.0 Add InputBoard for supporting input template words
 - 2022/06/10 v1.1.1 Order UI

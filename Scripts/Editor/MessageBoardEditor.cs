@@ -42,13 +42,6 @@ namespace Kmnk.MessageBoard
                 EditorGUILayout.LabelField("Option", BoxTitleStyle());
                 EditorGUILayout.PropertyField(_onlyWorldOwnerModeProperty);
                 EditorGUILayout.PropertyField(_titleProperty);
-            }
-
-            EditorGUILayout.Space();
-
-            using (new GUILayout.VerticalScope(GUI.skin.box))
-            {
-                EditorGUILayout.LabelField("Format", BoxTitleStyle());
                 EditorGUILayout.PropertyField(_timeFormatProperty);
             }
 
