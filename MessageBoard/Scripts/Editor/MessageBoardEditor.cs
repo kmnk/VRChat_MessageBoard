@@ -2,6 +2,8 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
+using Kmnk.Core;
+
 namespace Kmnk.MessageBoard
 {
     [CustomEditor(typeof(MessageBoard))]

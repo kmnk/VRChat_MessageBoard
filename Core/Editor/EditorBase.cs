@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEditor.Experimental.SceneManagement;
 using UnityEngine;
 
-namespace Kmnk.MessageBoard
+namespace Kmnk.Core
 {
     abstract class EditorBase<T> : Editor where T : MonoBehaviour
     {
@@ -55,14 +55,6 @@ namespace Kmnk.MessageBoard
                 _boxTitleStyle.normal.textColor = Color.white;
             }
             return _boxTitleStyle;
-        }
-
-        internal static MessageBoard GetMessageBoard(int id)
-        {
-            return Resources.FindObjectsOfTypeAll<MessageBoard>()
-                .Where(x => AssetDatabase.GetAssetOrScenePath(x).EndsWith(".unity"))
-                .Where(x => x.GetId() == id)
-                .FirstOrDefault();
         }
     }
 }

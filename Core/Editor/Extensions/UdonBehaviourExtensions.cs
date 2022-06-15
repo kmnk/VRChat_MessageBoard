@@ -3,7 +3,7 @@ using VRC.Udon;
 using VRC.Udon.Common;
 using VRC.Udon.Common.Interfaces;
 
-namespace Kmnk.MessageBoard
+namespace Kmnk.Core
 {
     internal static class UdonBehaviourExtensions
     {

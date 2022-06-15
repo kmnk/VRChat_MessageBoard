@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using VRC.Udon;
 using VRC.SDK3.Components;
 
+using Kmnk.Core;
+
 namespace Kmnk.MessageBoard
 {
     [CustomEditor(typeof(InputBoard))]
@@ -113,6 +115,14 @@ namespace Kmnk.MessageBoard
 
             // hide original button
             templateMessageButtonOrigin.SetActive(false);
+        }
+
+        private static MessageBoard GetMessageBoard(int id)
+        {
+            return Resources.FindObjectsOfTypeAll<MessageBoard>()
+                .Where(x => AssetDatabase.GetAssetOrScenePath(x).EndsWith(".unity"))
+                .Where(x => x.GetId() == id)
+                .FirstOrDefault();
         }
     }
 }

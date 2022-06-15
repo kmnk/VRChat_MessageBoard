@@ -5,7 +5,7 @@ using UdonSharpEditor;
 using UnityEngine;
 using VRC.Udon;
 
-namespace Kmnk.MessageBoard
+namespace Kmnk.Core
 {
     public static class UdonSharpBehaviourExtensions
     {

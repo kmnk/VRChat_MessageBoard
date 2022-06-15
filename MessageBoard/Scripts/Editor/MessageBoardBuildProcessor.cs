@@ -4,9 +4,11 @@ using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
 
+using Kmnk.Core;
+
 namespace Kmnk.MessageBoard
 {
-    class BuildProcessor : IProcessSceneWithReport
+    class MessageBoardBuildProcessor : IProcessSceneWithReport
     {
         public int callbackOrder => 0;
 
