@@ -2,15 +2,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using VRC.SDKBase;
-using VRC.Udon;
 
 namespace Kmnk.MessageBoard.Udon
 {
     public class InputBoard : UdonSharpBehaviour
     {
-        [SerializeField]
-        string[] _templateMessages = null;
-
         [SerializeField]
         Udon.MessageBoard _messageBoard = null;
 
@@ -23,11 +19,16 @@ namespace Kmnk.MessageBoard.Udon
         [SerializeField]
         InputField _inputField = null;
 
+#pragma warning disable CS0414
+        [SerializeField]
+        string[] _templateMessages = null;
+
         [SerializeField]
         Transform _templateMessagesTransform = null;
 
         [SerializeField]
         GameObject _templateMessageButtonOrigin = null;
+#pragma warning restore CS0414
 
         private void Start()
         {

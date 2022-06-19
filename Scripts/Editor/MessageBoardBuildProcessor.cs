@@ -16,6 +16,7 @@ namespace Kmnk.MessageBoard
         {
             Reapply<MessageBoard, MessageBoardEditor>();
             Reapply<InputBoard, InputBoardEditor>();
+            Reapply<MessageBoardViewer, MessageBoardViewerEditor>();
         }
 
         void Reapply<TBehaviour, TEditor>()

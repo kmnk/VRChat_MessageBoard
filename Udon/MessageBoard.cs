@@ -109,6 +109,26 @@ namespace Kmnk.MessageBoard.Udon
             _inputField.Select();
         }
 
+        public string GetTitle()
+        {
+            return _title;
+        }
+
+        public string[] GetMessages()
+        {
+            return _messages;
+        }
+
+        public string[] GetNames()
+        {
+            return _names;
+        }
+
+        public string[] GetTimes()
+        {
+            return _times;
+        }
+
         private void InitializeLogLines()
         {
             foreach (var l in _logLines)
@@ -190,6 +210,14 @@ namespace Kmnk.MessageBoard.Udon
             {
                 _logLines[i].Display(_messages[i], _names[i], _times[i]);
             }
+
+            if (_evnetListeners != null)
+            {
+                foreach (var listener in _evnetListeners)
+                {
+                    listener.OnDisplayAllLogLines();
+                }
+            }
         }
 
         private string FormatDateTime(DateTime dateTime)
@@ -197,6 +225,28 @@ namespace Kmnk.MessageBoard.Udon
             return dateTime
                 .ToLocalTime()
                 .ToString(_timeFormat, CultureInfo.InvariantCulture);
+        }
+
+        private MessageBoardEventListener[] _evnetListeners;
+        public void AddEventListener(UdonSharpBehaviour listener)
+        {
+            if (_evnetListeners == null)
+            {
+                _evnetListeners
+                    = new MessageBoardEventListener[]
+                    {
+                         (MessageBoardEventListener)listener
+                    };
+            }
+            else
+            {
+                var newArray
+                    = new MessageBoardEventListener[_evnetListeners.Length + 1];
+                _evnetListeners.CopyTo(newArray, 0);
+                newArray[newArray.Length - 1]
+                    = (MessageBoardEventListener)listener;
+                _evnetListeners = newArray;
+            }
         }
 
         #region base
