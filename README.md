@@ -1,41 +1,6 @@
 # MessageBoard
 Simple system for input and share text in VRChat World
 
-## Contents
-- README.md : this file
-- README_ja.md : README.md translated into Japanese
-- MessageBoard_vX_Y_Z.unitypackage
-- Scripts/ : C# Scripts
-- Udon/ : U# Scripts
-- LICENSE
-
-### in unitypackage
-* Kmnk
-    * MessageBoard
-        * Prefabs
-            - MessageBoard.prefab : main prefab
-            - InputBoard.prefab
-        * Scripts
-            * Editor
-                * Extensions
-                    - UdonBehaviourExtensions
-                    - UdonSharpBehaviourExtensions
-                - BuildProcessor
-                - EditorBase
-                - InputBoardEditor
-                - MessageBoardEditor
-            - InputBoard.cs
-            - MessageBoard.cs
-        * Udon
-            - InputBoard.asset
-            - InputBoard.cs
-            - LogLine.asset
-            - LogLine.cs
-            - MessageBoard.asset
-            - MessageBoard.cs
-            - TemplateMessageButton.asset
-            - TemplateMessageButton.cs
-
 ## Usage MessageBoard
 1. Import UdonSharp
 2. Import this MessageBoard unitypackage
@@ -43,6 +8,9 @@ Simple system for input and share text in VRChat World
 
 ### Usage InputBoard
 After MessageBoard placed, Place InputBoard Prefab under in the scene.
+
+### Usage MessageBoardViewer
+After MessageBoard placed, Place MessageBoardViewer Prefab under in the scene.
 
 ## Features MessageBoard
 ### Core
@@ -73,6 +41,16 @@ Select whether you want to be able to pick up the InputBoard.
 #### TemplateMessages
 Specify the template words for entering text by pressing the button.
 
+## Features MessageBoardViewer
+### Core
+#### Id
+When placing multiple MessageBoards in one world, specify the Id corresponding to each prefab.
+If only one MessageBoard is to be placed, leave it at 0.
+
+### Option
+#### Pickupable
+Select whether you want to be able to pick up the InputBoard.
+
 ## Notes
 - I have confirmed that this works with Unity 2019.4.31f1, VRCSDK3 WORLD 2022.06.03.00.03 Public, UdonSharp v0.20.3
 
@@ -81,6 +59,7 @@ MIT License
 Copyright (c) 2022 KMNK
 
 ## Updates
+- 2022/06/19 v1.3.0 Add MessageBoardViewer has display-only feature
 - 2022/06/14 v1.2.2 Adjust design and layout
 - 2022/06/14 v1.2.1 Fix bugs
 - 2022/06/13 v1.2.0 Add InputBoard for supporting input template words
